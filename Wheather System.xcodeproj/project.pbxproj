@@ -12,6 +12,8 @@
 		1F441D1B21B3B9010024997C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F441D1921B3B9010024997C /* Main.storyboard */; };
 		1F441D2021B3B9020024997C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F441D1F21B3B9020024997C /* Assets.xcassets */; };
 		1F441D2321B3B9020024997C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F441D2121B3B9020024997C /* LaunchScreen.storyboard */; };
+		1F916B6C21B857D00039DE8B /* WheaterInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F916B6B21B857D00039DE8B /* WheaterInfoViewController.swift */; };
+		1F916B7021B8599A0039DE8B /* WheatherInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F916B6F21B8599A0039DE8B /* WheatherInfoCollectionViewCell.swift */; };
 		1FEC24F221B5A2BD00BC9CA6 /* CountryListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEC24F121B5A2BD00BC9CA6 /* CountryListTableViewCell.swift */; };
 		1FEC24F521B5A30400BC9CA6 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEC24F421B5A30400BC9CA6 /* Country.swift */; };
 		1FEC24F821B5AE0A00BC9CA6 /* WheatherDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEC24F721B5AE0A00BC9CA6 /* WheatherDataViewController.swift */; };
@@ -19,6 +21,7 @@
 		1FEC24FF21B5B30F00BC9CA6 /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEC24FE21B5B30F00BC9CA6 /* ServiceProvider.swift */; };
 		1FEC250121B5B48300BC9CA6 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEC250021B5B48300BC9CA6 /* WebService.swift */; };
 		1FEC250321B5B75D00BC9CA6 /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEC250221B5B75D00BC9CA6 /* Metrics.swift */; };
+		1FEFF00321B9972D005AB3B0 /* WheatherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEFF00221B9972D005AB3B0 /* WheatherInfo.swift */; };
 		DDF4C0D63F9E0572599DC45A /* Pods_Wheather_System.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F64E254354B9DD48F3F341AF /* Pods_Wheather_System.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +33,8 @@
 		1F441D1F21B3B9020024997C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F441D2221B3B9020024997C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F441D2421B3B9020024997C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F916B6B21B857D00039DE8B /* WheaterInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheaterInfoViewController.swift; sourceTree = "<group>"; };
+		1F916B6F21B8599A0039DE8B /* WheatherInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheatherInfoCollectionViewCell.swift; sourceTree = "<group>"; };
 		1FEC24F121B5A2BD00BC9CA6 /* CountryListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListTableViewCell.swift; sourceTree = "<group>"; };
 		1FEC24F421B5A30400BC9CA6 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		1FEC24F721B5AE0A00BC9CA6 /* WheatherDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheatherDataViewController.swift; sourceTree = "<group>"; };
@@ -37,6 +42,7 @@
 		1FEC24FE21B5B30F00BC9CA6 /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
 		1FEC250021B5B48300BC9CA6 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		1FEC250221B5B75D00BC9CA6 /* Metrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
+		1FEFF00221B9972D005AB3B0 /* WheatherInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheatherInfo.swift; sourceTree = "<group>"; };
 		3676FF1A5F2217B228474ABF /* Pods-Wheather System.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wheather System.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wheather System/Pods-Wheather System.release.xcconfig"; sourceTree = "<group>"; };
 		98C99FBC23CB200A1163C9F5 /* Pods-Wheather System.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wheather System.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wheather System/Pods-Wheather System.debug.xcconfig"; sourceTree = "<group>"; };
 		F64E254354B9DD48F3F341AF /* Pods_Wheather_System.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wheather_System.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +84,7 @@
 				1F441D1521B3B9010024997C /* AppDelegate.swift */,
 				1FEC24EF21B5A27700BC9CA6 /* Home */,
 				1FEC24F921B5AE1500BC9CA6 /* Wheather Data */,
+				1F916B6D21B857D50039DE8B /* WheatherInfo */,
 				1F441D1921B3B9010024997C /* Main.storyboard */,
 				1F441D1F21B3B9020024997C /* Assets.xcassets */,
 				1F441D2121B3B9020024997C /* LaunchScreen.storyboard */,
@@ -86,6 +93,32 @@
 				1FEC250021B5B48300BC9CA6 /* WebService.swift */,
 			);
 			path = "Wheather System";
+			sourceTree = "<group>";
+		};
+		1F916B6D21B857D50039DE8B /* WheatherInfo */ = {
+			isa = PBXGroup;
+			children = (
+				1F916B6E21B857EA0039DE8B /* Controller */,
+				1F916B7121B8599D0039DE8B /* View */,
+				1FEFF00421B9A266005AB3B0 /* Model */,
+			);
+			path = WheatherInfo;
+			sourceTree = "<group>";
+		};
+		1F916B6E21B857EA0039DE8B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1F916B6B21B857D00039DE8B /* WheaterInfoViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1F916B7121B8599D0039DE8B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1F916B6F21B8599A0039DE8B /* WheatherInfoCollectionViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		1FEC24EF21B5A27700BC9CA6 /* Home */ = {
@@ -127,7 +160,7 @@
 			children = (
 				1FEC24FA21B5AE2500BC9CA6 /* Controller */,
 				1FEC24FD21B5AECF00BC9CA6 /* View */,
-				1FEC250221B5B75D00BC9CA6 /* Metrics.swift */,
+				1FEFF00521B9A7B2005AB3B0 /* Model */,
 			);
 			path = "Wheather Data";
 			sourceTree = "<group>";
@@ -146,6 +179,22 @@
 				1FEC24FB21B5AEA300BC9CA6 /* WheatherDataCollectionViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		1FEFF00421B9A266005AB3B0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1FEFF00221B9972D005AB3B0 /* WheatherInfo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1FEFF00521B9A7B2005AB3B0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1FEC250221B5B75D00BC9CA6 /* Metrics.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		3DA1347A3360FCB737374688 /* Frameworks */ = {
@@ -282,8 +331,11 @@
 				1FEC250121B5B48300BC9CA6 /* WebService.swift in Sources */,
 				1FEC24FF21B5B30F00BC9CA6 /* ServiceProvider.swift in Sources */,
 				1FEC250321B5B75D00BC9CA6 /* Metrics.swift in Sources */,
+				1FEFF00321B9972D005AB3B0 /* WheatherInfo.swift in Sources */,
+				1F916B7021B8599A0039DE8B /* WheatherInfoCollectionViewCell.swift in Sources */,
 				1F441D1821B3B9010024997C /* HomeViewController.swift in Sources */,
 				1F441D1621B3B9010024997C /* AppDelegate.swift in Sources */,
+				1F916B6C21B857D00039DE8B /* WheaterInfoViewController.swift in Sources */,
 				1FEC24F821B5AE0A00BC9CA6 /* WheatherDataViewController.swift in Sources */,
 				1FEC24F221B5A2BD00BC9CA6 /* CountryListTableViewCell.swift in Sources */,
 			);

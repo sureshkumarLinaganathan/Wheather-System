@@ -2,7 +2,7 @@
 //  WheatherDataViewController.swift
 //  Wheather System
 //
-//  Created by Natarajan on 04/12/18.
+//  Created by  Suresh Kumar on 04/12/18.
 //  Copyright © 2018 Suresh Kumar. All rights reserved.
 //
 
@@ -20,6 +20,7 @@ class WheatherDataViewController: UIViewController {
     var rainFalls = [Metrics]()
     var maxTemp = [Metrics]()
     var minTemp = [Metrics]()
+    var wheatherInfo = [WheatherInfo]()
     var count = 0
     
     var loadingIndicator:NVActivityIndicatorView?
@@ -42,20 +43,66 @@ class WheatherDataViewController: UIViewController {
         self.navigationController?.popViewController(animated:true)
     }
     
+    func filterDataFromArray(year:Int64, array:[Metrics])->[Metrics]{
+        let filterArray = array.filter {$0.year == year}
+        return filterArray
+    }
+    func sortArray(array:[Metrics])->[Metrics]{
+        let sortArray = array.sorted(by:{ $0.month! < $1.month! })
+        return sortArray
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == WheaterInfoViewControllerSegue){
+            let controller:WheaterInfoViewController = segue.destination as! WheaterInfoViewController
+            controller.wheatherInfo = wheatherInfo
+        }
+    }
+    
 }
 
-extension WheatherDataViewController:UICollectionViewDelegate,UICollectionViewDataSource{
+extension WheatherDataViewController:UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return MAX_MONTH
+        return (rainFalls.count/12)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let wheatherDataCell:WheatherDataCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier:WheatherDataCollectionViewCellReuseIdentifier, for:indexPath) as! WheatherDataCollectionViewCell
+        let index = indexPath.row * 12
+        let metric:Metrics = rainFalls[index]
+        wheatherDataCell.setupView(metric:metric)
         return wheatherDataCell
         
     }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 95, height: 95)
+    }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let index = indexPath.row * 12
+        var year:Int64 = 0
+        if(index<rainFalls.count){
+            let metric = rainFalls[index]
+            year = metric.year!
+        }
+        filterObjects(year:year)
+        self.performSegue(withIdentifier:WheaterInfoViewControllerSegue, sender:self)
+    }
+    
+    func filterObjects(year:Int64){
+        var filterRainFalls = filterDataFromArray(year:year, array:rainFalls)
+        filterRainFalls = sortArray(array:filterRainFalls)
+        
+        var filterMaxTemp = filterDataFromArray(year:year, array: maxTemp)
+        filterMaxTemp = sortArray(array:filterMaxTemp)
+        
+        var filterMinTemp = filterDataFromArray(year:year, array:minTemp)
+        filterMinTemp = sortArray(array:filterMinTemp)
+        wheatherInfo = WheatherInfo().createWheatherInfoObject(rainFalls:filterRainFalls, maxTemps:filterMaxTemp, minTemps:filterMinTemp)
+        
+        
+    }
     
 }
 
@@ -70,6 +117,7 @@ extension WheatherDataViewController{
             }
             if(self.count == MAX_PROCESS_COUNT){
                 self.hideLoadingIndicator()
+                self.collectionView.reloadData()
             }
         }
     }
@@ -82,6 +130,7 @@ extension WheatherDataViewController{
             }
             if(self.count == MAX_PROCESS_COUNT){
                 self.hideLoadingIndicator()
+                self.collectionView.reloadData()
             }
         }
     }
@@ -94,6 +143,7 @@ extension WheatherDataViewController{
             }
             if(self.count == MAX_PROCESS_COUNT){
                 self.hideLoadingIndicator()
+                self.collectionView.reloadData()
             }
         }
     }
