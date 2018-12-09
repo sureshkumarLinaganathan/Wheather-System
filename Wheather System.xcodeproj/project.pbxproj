@@ -12,6 +12,14 @@
 		1F441D1B21B3B9010024997C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F441D1921B3B9010024997C /* Main.storyboard */; };
 		1F441D2021B3B9020024997C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F441D1F21B3B9020024997C /* Assets.xcassets */; };
 		1F441D2321B3B9020024997C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F441D2121B3B9020024997C /* LaunchScreen.storyboard */; };
+		1F68A30A21BCE4ED005E74DA /* Database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1F68A30821BCE4ED005E74DA /* Database.xcdatamodeld */; };
+		1F68A31121BCE5D8005E74DA /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68A31021BCE5D8005E74DA /* Database.swift */; };
+		1F68A32921BCF926005E74DA /* CDMaxTemp+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68A32321BCF926005E74DA /* CDMaxTemp+CoreDataClass.swift */; };
+		1F68A32A21BCF926005E74DA /* CDMaxTemp+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68A32421BCF926005E74DA /* CDMaxTemp+CoreDataProperties.swift */; };
+		1F68A32B21BCF926005E74DA /* CDRainFall+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68A32521BCF926005E74DA /* CDRainFall+CoreDataClass.swift */; };
+		1F68A32C21BCF926005E74DA /* CDRainFall+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68A32621BCF926005E74DA /* CDRainFall+CoreDataProperties.swift */; };
+		1F68A32D21BCF926005E74DA /* CDMinTemp+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68A32721BCF926005E74DA /* CDMinTemp+CoreDataClass.swift */; };
+		1F68A32E21BCF926005E74DA /* CDMinTemp+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68A32821BCF926005E74DA /* CDMinTemp+CoreDataProperties.swift */; };
 		1F916B6C21B857D00039DE8B /* WheaterInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F916B6B21B857D00039DE8B /* WheaterInfoViewController.swift */; };
 		1F916B7021B8599A0039DE8B /* WheatherInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F916B6F21B8599A0039DE8B /* WheatherInfoCollectionViewCell.swift */; };
 		1FEC24F221B5A2BD00BC9CA6 /* CountryListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEC24F121B5A2BD00BC9CA6 /* CountryListTableViewCell.swift */; };
@@ -33,6 +41,14 @@
 		1F441D1F21B3B9020024997C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F441D2221B3B9020024997C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F441D2421B3B9020024997C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F68A30921BCE4ED005E74DA /* Database.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Database.xcdatamodel; sourceTree = "<group>"; };
+		1F68A31021BCE5D8005E74DA /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		1F68A32321BCF926005E74DA /* CDMaxTemp+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDMaxTemp+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1F68A32421BCF926005E74DA /* CDMaxTemp+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDMaxTemp+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1F68A32521BCF926005E74DA /* CDRainFall+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDRainFall+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1F68A32621BCF926005E74DA /* CDRainFall+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDRainFall+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1F68A32721BCF926005E74DA /* CDMinTemp+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDMinTemp+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1F68A32821BCF926005E74DA /* CDMinTemp+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDMinTemp+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1F916B6B21B857D00039DE8B /* WheaterInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheaterInfoViewController.swift; sourceTree = "<group>"; };
 		1F916B6F21B8599A0039DE8B /* WheatherInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheatherInfoCollectionViewCell.swift; sourceTree = "<group>"; };
 		1FEC24F121B5A2BD00BC9CA6 /* CountryListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListTableViewCell.swift; sourceTree = "<group>"; };
@@ -89,10 +105,34 @@
 				1F441D1F21B3B9020024997C /* Assets.xcassets */,
 				1F441D2121B3B9020024997C /* LaunchScreen.storyboard */,
 				1F441D2421B3B9020024997C /* Info.plist */,
+				1F68A31A21BCEDD3005E74DA /* Webservices */,
+				1F68A30F21BCE577005E74DA /* Database */,
+			);
+			path = "Wheather System";
+			sourceTree = "<group>";
+		};
+		1F68A30F21BCE577005E74DA /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				1F68A32321BCF926005E74DA /* CDMaxTemp+CoreDataClass.swift */,
+				1F68A32421BCF926005E74DA /* CDMaxTemp+CoreDataProperties.swift */,
+				1F68A32521BCF926005E74DA /* CDRainFall+CoreDataClass.swift */,
+				1F68A32621BCF926005E74DA /* CDRainFall+CoreDataProperties.swift */,
+				1F68A32721BCF926005E74DA /* CDMinTemp+CoreDataClass.swift */,
+				1F68A32821BCF926005E74DA /* CDMinTemp+CoreDataProperties.swift */,
+				1F68A30821BCE4ED005E74DA /* Database.xcdatamodeld */,
+				1F68A31021BCE5D8005E74DA /* Database.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		1F68A31A21BCEDD3005E74DA /* Webservices */ = {
+			isa = PBXGroup;
+			children = (
 				1FEC24FE21B5B30F00BC9CA6 /* ServiceProvider.swift */,
 				1FEC250021B5B48300BC9CA6 /* WebService.swift */,
 			);
-			path = "Wheather System";
+			path = Webservices;
 			sourceTree = "<group>";
 		};
 		1F916B6D21B857D50039DE8B /* WheatherInfo */ = {
@@ -328,15 +368,23 @@
 			files = (
 				1FEC24FC21B5AEA300BC9CA6 /* WheatherDataCollectionViewCell.swift in Sources */,
 				1FEC24F521B5A30400BC9CA6 /* Country.swift in Sources */,
+				1F68A32921BCF926005E74DA /* CDMaxTemp+CoreDataClass.swift in Sources */,
 				1FEC250121B5B48300BC9CA6 /* WebService.swift in Sources */,
 				1FEC24FF21B5B30F00BC9CA6 /* ServiceProvider.swift in Sources */,
 				1FEC250321B5B75D00BC9CA6 /* Metrics.swift in Sources */,
+				1F68A32D21BCF926005E74DA /* CDMinTemp+CoreDataClass.swift in Sources */,
 				1FEFF00321B9972D005AB3B0 /* WheatherInfo.swift in Sources */,
+				1F68A32B21BCF926005E74DA /* CDRainFall+CoreDataClass.swift in Sources */,
+				1F68A32A21BCF926005E74DA /* CDMaxTemp+CoreDataProperties.swift in Sources */,
 				1F916B7021B8599A0039DE8B /* WheatherInfoCollectionViewCell.swift in Sources */,
 				1F441D1821B3B9010024997C /* HomeViewController.swift in Sources */,
 				1F441D1621B3B9010024997C /* AppDelegate.swift in Sources */,
 				1F916B6C21B857D00039DE8B /* WheaterInfoViewController.swift in Sources */,
 				1FEC24F821B5AE0A00BC9CA6 /* WheatherDataViewController.swift in Sources */,
+				1F68A30A21BCE4ED005E74DA /* Database.xcdatamodeld in Sources */,
+				1F68A32C21BCF926005E74DA /* CDRainFall+CoreDataProperties.swift in Sources */,
+				1F68A32E21BCF926005E74DA /* CDMinTemp+CoreDataProperties.swift in Sources */,
+				1F68A31121BCE5D8005E74DA /* Database.swift in Sources */,
 				1FEC24F221B5A2BD00BC9CA6 /* CountryListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -543,6 +591,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1F68A30821BCE4ED005E74DA /* Database.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1F68A30921BCE4ED005E74DA /* Database.xcdatamodel */,
+			);
+			currentVersion = 1F68A30921BCE4ED005E74DA /* Database.xcdatamodel */;
+			path = Database.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1F441D0A21B3B9010024997C /* Project object */;
 }

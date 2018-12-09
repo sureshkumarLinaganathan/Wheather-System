@@ -26,6 +26,8 @@ class ServiceProvider: NSObject {
             var  array = [Metrics]()
             if(status == true){
                 array = Metrics().initWithArray(array:metrics as! [NSDictionary]);
+                Database.sharedInstance.deleteRainFallData(countryName:countryName)
+                Database.sharedInstance.saveRainFallToDB(array:array,countryName:countryName)
             }
             callback(array as NSArray,status,message)
         }
@@ -40,6 +42,8 @@ class ServiceProvider: NSObject {
             var  array = [Metrics]()
             if(status == true){
                 array = Metrics().initWithArray(array:metrics as! [NSDictionary]);
+                Database.sharedInstance.deleteMaxTempData(countryName:countryName)
+                Database.sharedInstance.saveMaxTempToDB(array: array,countryName:countryName)
             }
             callback(array as NSArray,status,message)
         }
@@ -54,6 +58,8 @@ class ServiceProvider: NSObject {
             var  array = [Metrics]()
             if(status == true){
                 array = Metrics().initWithArray(array:metrics as! [NSDictionary]);
+                Database.sharedInstance.deleteMinTempData(countryName:countryName)
+                Database.sharedInstance.saveMinTempToDB(array:array,countryName:countryName)
             }
             callback(array as NSArray,status,message)
         }

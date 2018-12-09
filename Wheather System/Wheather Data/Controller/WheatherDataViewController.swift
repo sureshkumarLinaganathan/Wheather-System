@@ -16,12 +16,16 @@ let MAX_PROCESS_COUNT = 3
 class WheatherDataViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    @IBOutlet weak var messageLabel: UILabel!
+    
     var selectedCountryName:String?
     var rainFalls = [Metrics]()
     var maxTemp = [Metrics]()
     var minTemp = [Metrics]()
     var wheatherInfo = [WheatherInfo]()
-    var count = 0
+    var count:UInt = 0
+    var failureCount:UInt = 0
     
     var loadingIndicator:NVActivityIndicatorView?
     var loadingView:UIView?
@@ -30,17 +34,49 @@ class WheatherDataViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        reset()
+        fetchData()
     }
     
     func setupView(){
         addLoadingIndicator()
-        self.fetchRainFall(countryName:selectedCountryName!)
-        self.fetchMaxTemp(countryName: selectedCountryName!)
-        self.fetchMinTemp(countryName: selectedCountryName!)
+    }
+    
+    func reset(){
+        count = 0;
+        failureCount = 0;
+        messageLabel.isHidden = true
+    }
+    
+    func fetchData(){
+        rainFalls = Database.sharedInstance.fetchRainFallData(countryName:selectedCountryName!)
+        if rainFalls.count == 0{
+            self.fetchRainFall(countryName:selectedCountryName!)
+        }else{
+            count = count+1
+        }
+        maxTemp = Database.sharedInstance.fetchMaxTempData(countryName:selectedCountryName!)
+        if maxTemp.count == 0{
+            self.fetchMaxTemp(countryName: selectedCountryName!)
+        }else{
+            count = count+1
+        }
+        minTemp = Database.sharedInstance.fetchMinTempData(countryName:selectedCountryName!)
+        if minTemp.count == 0{
+         self.fetchMinTemp(countryName: selectedCountryName!)
+        }else{
+            count = count+1
+        }
     }
     
     @IBAction func backButtonTapped(_ sender: Any) {
         self.navigationController?.popViewController(animated:true)
+    }
+    @IBAction func refreshButtonTapped(_ sender: Any) {
+        reset()
+        self.fetchRainFall(countryName:selectedCountryName!)
+        self.fetchMaxTemp(countryName: selectedCountryName!)
+        self.fetchMinTemp(countryName: selectedCountryName!)
     }
     
     func filterDataFromArray(year:Int64, array:[Metrics])->[Metrics]{
@@ -114,11 +150,12 @@ extension WheatherDataViewController{
             self.count = self.count+1
             if(status == true){
                 self.rainFalls = rainFalls as! [Metrics]
-            }
-            if(self.count == MAX_PROCESS_COUNT){
-                self.hideLoadingIndicator()
                 self.collectionView.reloadData()
+            }else{
+                self.failureCount = self.failureCount+1
             }
+            self.isNeedToHideLoadingIndicator()
+            self.isNeedToShowMessageLabel()
         }
     }
     
@@ -127,11 +164,12 @@ extension WheatherDataViewController{
             self.count = self.count+1
             if(status == true){
                 self.maxTemp = maxTepms as! [Metrics]
-            }
-            if(self.count == MAX_PROCESS_COUNT){
-                self.hideLoadingIndicator()
                 self.collectionView.reloadData()
+            }else{
+                self.failureCount = self.failureCount+1
             }
+            self.isNeedToHideLoadingIndicator()
+            self.isNeedToShowMessageLabel()
         }
     }
     
@@ -140,11 +178,23 @@ extension WheatherDataViewController{
             self.count = self.count+1
             if(status == true){
                 self.minTemp = minTemps as! [Metrics]
-            }
-            if(self.count == MAX_PROCESS_COUNT){
-                self.hideLoadingIndicator()
                 self.collectionView.reloadData()
+            }else{
+                self.failureCount = self.failureCount+1
             }
+            self.isNeedToHideLoadingIndicator()
+            self.isNeedToShowMessageLabel()
+        }
+    }
+    func isNeedToHideLoadingIndicator(){
+        if(count == MAX_PROCESS_COUNT){
+            hideLoadingIndicator()
+        }
+    }
+    
+    func isNeedToShowMessageLabel(){
+        if(failureCount == MAX_PROCESS_COUNT){
+            messageLabel.isHidden = false
         }
     }
 }
